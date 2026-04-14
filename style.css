@@ -1,6 +1,8 @@
 :root{
     --bg-primary-color : #0c0c0c;
     --text-primary-color : #f0f0f0;
+    --bg-fill-color : #fdfdfc;
+    --bg-food-color : red;
 
     /* spacing variables */
     --space-xs : 4px;
@@ -12,7 +14,7 @@
     --space-3xl : 48px;
 
     /* border  */
-    --border-primary-color : #333333;
+    --border-primary-color : #232222;
 
     /* border-radius */
     --border-radius-xs : 4px; 
@@ -68,12 +70,54 @@ section .infos{
     border: 1px solid var(--border-primary-color);
     flex-grow: 1;
     display: grid;
-    grid-template-columns: repeat(auto-fill , minmax(30px , 1fr));
-    grid-template-rows: repeat(auto-fill , minmax(30px , 1fr));
+    grid-template-columns: repeat(auto-fill , minmax(50px , 1fr));
+    grid-template-rows: repeat(auto-fill , minmax(50px , 1fr));
 }
 
 .box{
-    height: 30px;
-    width: 30px;
     border: 1px solid var(--border-primary-color);
+    border-radius: 50%;
+}
+
+.fill{
+    background-color: var(--bg-fill-color);
+}
+
+.food{
+    background-color: var(--bg-food-color);
+}
+
+.modal{
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    background-color: #35353587;
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal .start-game , .modal .game-over{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-l);
+}
+
+.modal .game-over{
+    display: none;
+}
+
+.btn{
+    padding: var(--space-s) var(--space-m);
+    border-radius: var(--border-radius-s);
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn:hover{
+    transform: scale(1.1);
 }
